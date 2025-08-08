@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Cards</title>
+  <style>
+    .card {
+      border: 1px solid #000;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    let data = [
+      { name: "Mayur", seat: "M12345", rank: 1 },
+      { name: "Asha", seat: "M54321", rank: 5 }
+    ];
+
+    data.forEach(student => {
+      createCard(student);
+    });
+
+    function createCard(student) {
+      let card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <b>${student.name}</b>
+        <p>Seat No: ${student.seat}</p>
+        <b>Rank: ${student.rank}</b>
+      `;
+      document.body.appendChild(card);
+    }
+  </script>
+</body>
+</html>

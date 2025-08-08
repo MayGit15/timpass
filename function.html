@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //-------------------function declare
+        function intro(){
+            console.log("hello i am mayur")
+            console.log("i am 21 years old")
+            console.log("i am a Web designer")
+        }
+        intro()
+
+        //---------------------function with parameter , argument
+
+        // function fullname(fname,lname){
+        //     console.log("My name is " + fname + lname)
+        // }
+        // fullname("mayank","yadav")
+
+        function sum(num1,num2){
+            console.log(num1 * num2)
+        }
+        sum(10,5)
+
+        //------------------- return function 
+
+        function fullname(fname,lname){
+            let name = "my name is " + fname + " " + lname
+            return name
+        }
+        let result = fullname("raj","gupta")
+        console.log(result)
+
+        //------------------- Arrow function
+
+        const add = (a , b) => ( a * b)
+        console.log(add(20,5))
+    </script>
+</body>
+</html> 

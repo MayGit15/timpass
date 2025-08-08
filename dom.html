@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DOM Methods Examples</title>
+</head>
+<body>
+  <h1 id="title">Welcome</h1>
+  <p class="para">Hello Paragraph</p>
+  <div id="container">
+    <span>Item 1</span>
+    <span>Item 2</span>
+  </div>
+  <button onclick="changeText()">Change Text</button>
+
+  <script>
+    // 1. getElementById
+    let title = document.getElementById("title");
+    console.log("getElementById:", title.textContent); // "Welcome"
+
+    // 2. getElementsByClassName
+    let paras = document.getElementsByClassName("para");
+    console.log("getElementsByClassName:", paras[0].textContent); // "Hello Paragraph"
+
+    // 3. getElementsByTagName
+    let spans = document.getElementsByTagName("span");
+    console.log("getElementsByTagName:", spans.length); // 2
+
+    // 4. querySelector
+    let firstSpan = document.querySelector("span");
+    console.log("querySelector:", firstSpan.textContent); // "Item 1"
+
+    // 5. querySelectorAll
+    let allSpans = document.querySelectorAll("span");
+    allSpans.forEach((el, index) => console.log("querySelectorAll span", index + 1, el.textContent));
+
+    // 6. createElement
+    let newPara = document.createElement("p");
+    newPara.textContent = "This is a new paragraph";
+    document.body.appendChild(newPara);
+
+    // 7. appendChild
+    let newItem = document.createElement("span");
+    newItem.textContent = "Item 3";
+    document.getElementById("container").appendChild(newItem);
+
+    // 8. removeChild
+    let container = document.getElementById("container");
+    container.removeChild(container.firstElementChild); // Removes "Item 1"
+
+    // 9. replaceChild
+    let replacement = document.createElement("span");
+    replacement.textContent = "New Item";
+    container.replaceChild(replacement, container.children[0]); // Replaces "Item 2"
+
+    // 10. cloneNode
+    let clone = replacement.cloneNode(true);
+    container.appendChild(clone); // Adds "New Item" again
+
+    // 11. innerHTML
+    console.log("innerHTML of container:", container.innerHTML);
+
+    // 12. textContent
+    console.log("textContent of title:", title.textContent);
+
+    // 13. setAttribute
+    title.setAttribute("style", "color:blue");
+
+    // 14. getAttribute
+    console.log("Title style:", title.getAttribute("style"));
+
+    // 15. removeAttribute
+    title.removeAttribute("style");
+
+    // 16. classList.add / remove / toggle / contains
+    title.classList.add("highlight");
+    console.log("classList.contains('highlight'):", title.classList.contains("highlight"));
+    title.classList.remove("highlight");
+    title.classList.toggle("highlight"); // add if missing, remove if present
+
+    // 17. parentNode
+    console.log("parentNode of title:", title.parentNode.tagName);
+
+    // 18. children
+    console.log("Children of container:", container.children.length);
+
+    // 19. nextElementSibling / previousElementSibling
+    console.log("Next sibling of title:", title.nextElementSibling.tagName);
+
+    // 20. Event Listener
+    function changeText() {
+      title.textContent = "Text Changed!";
+    }
+  </script>
+</body>
+</html>

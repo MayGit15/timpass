@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let studentdata = {
+            fname : "mayank",
+            lname : "yadav",
+            age : 20
+        }
+        console.log(studentdata);
+
+        // access
+        console.log(studentdata.age)
+
+        //update
+        studentdata.fname = "rahul"
+
+        //property 
+        studentdata.email = "rahul@gmail.com"
+
+        //delete
+        delete studentdata.age
+        console.log(studentdata);
+
+        //exist
+        console.log("hobbies".studentdata)  
+
+        //exist with true or false value
+        console.log("hobbies".studentdata)  
+
+        //with funtion
+        if("age" in studentdata){
+            console.log("yes , age  is axist")
+        }
+        else{
+            console.log("age does not exist")
+        }
+
+        console.log(Object.keys(studentdata));   // ['fname', 'lname', 'age']
+console.log(Object.values(studentdata)); // ['mayank', 'yadav', 20]
+console.log(Object.entries(studentdata)); // [['fname','mayank'], ['lname','yadav'], ['age',20]]
+
+
+
+        
+    </script>
+</body>
+</html>

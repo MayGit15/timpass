@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Async Await Fetch Example</title>
+</head>
+<body>
+  <h2>कंसोल में यूज़र डेटा देखें</h2>
+
+  <script>
+    // ✅ एक async function बनाया गया है, ताकि हम await का इस्तेमाल कर सकें
+    async function getUserData() {
+
+      // ✅ fetch() API को कॉल करता है, और await उसे पूरा होने तक रुकाता है
+      let response = await fetch('https://dummyjson.com/users/1');
+
+      // ✅ response को JSON फॉर्मेट में बदल रहे हैं
+      let user = await response.json();
+
+      // ✅ user object को कंसोल में दिखा रहे हैं
+      console.log("यूज़र डेटा:", user);
+    }
+
+    // ✅ function को कॉल कर रहे हैं ताकि ऊपर का कोड चले
+    getUserData();
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="myPara">Hello</p>
+
+    <p class="info">One</p>
+    <p class="info">Two</p>
+
+    <p>Para 1</p>
+<p>Para 2</p>
+
+<p class="text">Hello</p>
+    <script>
+      // getElementById()
+      // 👉 एक एलिमेंट को उसकी ID से चुनता
+      let para = document.getElementById("myPara");
+      para.style.color = "blue";
+
+      //   getElementsByClassName()
+      // 👉 सभी elements को एक क्लास नाम से लाता है (HTMLCollection में)
+      let items = document.getElementsByClassName("info");
+      items[0].style.color = "green";
+
+    //   getElementsByTagName()
+// 👉 किसी tag (जैसे p, div) से सारे elements को लाता है
+let allP = document.getElementsByTagName("p");
+  allP[1].style.fontWeight = "bold";
+
+//   querySelector()
+// 👉 पहला matching element को CSS selector के आधार पर लाता है
+let element = document.querySelector(".text");
+  element.innerHTML = "Updated!";
+
+    </script>
+  </body>
+</html>
